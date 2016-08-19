@@ -1,0 +1,50 @@
+<div class="container-fluid no_space">
+    <div class="panel panel-default">
+        <div class="panel-heading">基本信息</div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <tr><td align="right">游戏</td><td>${set.game_id|get_game_name}</td></tr>
+                <tr><td align="right">期次</td><td>${set.term_code}</td></tr>
+                <tr><td align="right">期次列表</td>
+                <td>
+                    <div style="width: 480px;word-break: break-all">${set.term_code_list}</div>
+                </td>
+                </tr>
+                <tr><td align="right">玩法</td><td>${set.play_type|get_play_name}</td></tr>
+                <tr><td align="right">投注方式</td><td>${set.bet_type|get_bet_name}</td></tr>
+                <tr><td align="right">倍数</td><td>${set.multiple}</td></tr>
+                <tr><td align="right">注数</td><td>${set.icount}</td></tr>
+                <tr><td align="right">金额</td><td>${set.amount/100}</td></tr>
+                <tr><td align="right">状态</td><td>${set.status|get_ticket_status_des}</td></tr>
+                <tr><td align="right">外部id</td>
+                    <td>${set.out_id}</td>
+                </tr>
+                <tr><td align="right">税前奖金</td><td>${set.bonus/100}</td></tr>
+                <tr><td align="right">税后奖金</td><td>${set.bonus_after_tax/100}</td></tr>
+                <tr><td align="right">中奖明细</td><td>
+                    <div style="width: 480px;word-break: break-all">${set.bonus_detail}</div>
+                </td></tr>
+                <tr><td align="right">投注号码</td><td>
+                    <div style="width: 480px;word-break: break-all">${set.number}</div>
+                </td></tr>
+                <tr><td align="right">出票号码</td><td>
+                    <div style="width: 480px;word-break: break-all">${set.print_number}</div>
+                </td></tr>
+                <tr><td align="right">开奖号码</td><td>
+                    <div style="width: 480px;word-break: break-all">${set.draw_code_list}</div>
+                </td></tr>
+
+                <tr><td align="right">创建时间</td><td>${set.create_time|getLocDateStr}</td></tr>
+                <tr><td align="right">出票终端</td><td>{@if set.terminal_id > 0}${set.terminal_id}{@else}无{@/if}</td></tr>
+                <tr><td align="right">出票时间</td><td>{@if set.print_time > 0}${set.print_time|getLocDateStr}{@else}无{@/if}</td></tr>
+                <tr><td align="right">序列号</td><td>${set.seq}</td></tr>
+                <tr><td align="right">票根信息</td><td>
+                    <div style="width: 480px;word-break: break-all">${set.stub}</div>
+                </td></tr>
+                <tr><td align="right">兑奖票根</td><td>
+                    <div style="width: 480px;word-break: break-all">${set.bonus_stub}</div>
+                </td></tr>
+            </table>
+        </div>
+    </div>
+</div>

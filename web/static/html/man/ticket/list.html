@@ -1,0 +1,158 @@
+<div class="modal fade bs-example-modal-lg" id="${index}_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:680px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+                <h4 class="modal-title">
+                    票据详情
+                </h4>
+            </div>
+            <div class="modal-body"  id="${index}_modal_body" style="height:480px;overflow-y: scroll">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid no_space" style="padding-bottom: 8px;">
+    <div class="row">
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                游&nbsp;&nbsp;&nbsp;&nbsp;戏
+            </span>
+            <select id="${index}_game_id" class="form-control">
+                <option value="-1">所有</option>
+                {@each game_rel as set}
+                <option value="${set.id}" {@if cond.game_id == set.id}selected="true"{@/if}>${set.name}</option>
+                {@/each}
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                内部ID
+            </span>
+            <input id="${index}_id" value="${cond.id}" type="text" class="form-control"/>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                外部ID
+            </span>
+            <input id="${index}_out_id" value="${cond.out_id}" type="text" class="form-control"/>
+        </div>
+    </div>
+    </div>
+
+    <div class="row" style="padding-top:8px">
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                终端id
+            </span>
+            <input id="${index}_terminal_id" value="${cond.terminal_id}" type="text" class="form-control"/>
+        </div>
+    </div>
+    
+    <div class="col-md-8">
+        <div class="input-group">
+            <span class="input-group-addon">
+                时&nbsp;&nbsp;&nbsp;&nbsp;间 
+            </span>
+            <ul class="nav nav-pills">
+                {@each time_list as item, gkey}
+                <li role="presentation" flag="${index}_time_item" t_id="${item.id}" {@if item.id == cur_time}class="active"{@/if}><a href="#">${item.des}</a></li>
+                {@/each}
+            </ul>
+        </div>
+    </div>
+    </div>
+
+</div>
+<div class="container-fluid no_space">
+    <div row="col-md-12" style="padding-bottom: 8px">
+        <button id="${index}_search" class="btn btn-default">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            搜索
+        </button>
+        {@if cond.status==15}
+        <button id="${index}_reprintall" class="btn btn-default">
+            一键重出 
+        </button>
+        {@/if}
+
+        {@if cond.status == 10 || cond.status==15}
+        <button id="${index}_refund_match" class="btn btn-default">
+            一键退款
+        </button>
+        {@/if}
+
+        
+        {@if cond.status==65}
+        <button id="${index}_rebonusall" class="btn btn-default">
+            一键重兑 
+        </button>
+        {@/if}
+    </div>
+</div>
+<div id="${index}_set_list" class="container-fluid no_space">
+    <table class="table table-striped table-hover table-bordered">
+        <thead><tr>
+            <td>id</td><td>游戏</td><td>期次</td>
+            <td>玩法</td><td>投注方式</td>
+            <td>金额</td><td>号码</td><td>状态</td>
+            {@if cond.status == 65}
+            <td>已兑次数</td>
+            {@/if}
+            <td>创建时间/截止时间</td><td>操作</td>
+        </tr></thead>
+        <tbody>
+        {@each set_list as set}
+        <tr>
+            <td>${set.id}</td>
+            <td>${set.game_id|get_game_name}</td>
+            <td>${set.term_code}</td>
+            <td>${set|get_play_name}</td>
+            <td>${set|get_bet_name}</td>
+            <td>${set.amount/100}</td>
+            <td><div style="width: 140px;word-break: break-all">${set.number}</div></td>
+            <td>${set.status|get_ticket_status_des}</td>
+            {@if cond.status == 65}
+            <td>${set.bonus_try_count}</td>
+            {@/if}
+            <td>
+                ${set.create_time|getLocDateStr}<br/>
+                <br/>
+                ${set.end_time|getLocDateStr}
+            </td>
+            <td>
+                <a flag="${index}_detail" t_id="${set.id}">详情</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                {@if set.status==10}<a flag="${index}_print_err" t_id="${set.id}">出票错误</a>&nbsp;&nbsp;&nbsp;&nbsp;{@/if}
+                {@if set.status==15}<a flag="${index}_reprint" t_id="${set.id}">重新出票</a>&nbsp;&nbsp;&nbsp;&nbsp;{@/if}
+                <br/>
+                {@if set.status==15 || set.status==10}
+                <a flag="${index}_refund" t_id="${set.id}">退款</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a flag="${index}_stub" t_id="${set.id}">上传票根</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                {@/if}
+                <br/>
+                {@if set.status==60 || set.status==65 || set.status==70}<a flag="${index}_bonus" t_id="${set.id}">兑奖</a>&nbsp;&nbsp;&nbsp;&nbsp;{@/if}
+                {@if set.status==65}<a flag="${index}_bonus_success" t_id="${set.id}">已兑奖</a>&nbsp;&nbsp;&nbsp;&nbsp;<br/>{@/if}
+                {@if set.status==65}<br/><a flag="${index}_bonus_big" t_id="${set.id}">中大奖</a>{@/if}
+            </td>
+        </tr>
+        {@/each}
+        </tbody>
+    </table>
+</div>
+<div id="${index}_pagebar" class="container-fluid no_space">
+</div>

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="./css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <link href="./css/site.css" rel="stylesheet"/>
+
+    <!--[if lt IE 9]>
+    <script src="./js/html5shiv.min.js"></script>
+    <script src="./js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="navbar-top navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="./company_manager.html">首页</a>
+        </div>
+    </div>
+</div>
+<div id="root_container" class="container" style="margin-top: 62px;">
+</div>
+<script type="text/javascript" src="./js/cryptojs/rollups/md5.js"></script>
+<script type="text/javascript" src="./js/cryptojs/components/enc-base64.js"></script>
+<script type="text/javascript" src="./js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/juicer-min.js"></script>
+<script type="text/javascript" src="./js/com/async.js"></script>
+<script type="text/javascript" src="./js/com/index.js"></script>
+<script type="text/javascript" src="./js/site.js"></script>
+<script type="text/javascript" src="./js/mkdown/index.js"></script>
+
+<script type="text/javascript">
+    new Com({id:"root_container", path:"company_manager.main", pins:null}, function(err, c){
+        //console.log(c)
+    });
+</script>
+</body>
+</html>

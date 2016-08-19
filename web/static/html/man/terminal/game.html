@@ -1,0 +1,90 @@
+<div class="modal fade bs-example-modal-lg" id="${index}_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:680px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+                <h4 class="modal-title">
+                    设置佣金比例 
+                </h4>
+            </div>
+            <div class="modal-body"  id="${index}_modal_body" style="height:480px;overflow-y: scroll">
+                <div class="row">
+                <div class="col-md-8">
+                <div class="input-group">
+                <span class="input-group-addon">
+                    <div style="width:60px;">记录&nbsp;&nbsp;id</div>
+                </span>
+                <span id="${index}_cur_id" class="form-control">
+                </span>
+                </div>
+                </div>
+                </div>
+
+                <div class="row" style="padding-top:8px;">
+                <div class="col-md-8">
+                <div class="input-group">
+                <span class="input-group-addon">
+                    <div style="width:60px;">佣金比例</div>
+                </span>
+                <input id="${index}_scale" class="form-control" value=""/>
+                </div>
+                </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button id="${index}_save" class="btn btn-primary" type="button">
+                    保存 
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid no_space">
+    <div class="row">
+        <div class="col-md-12">
+            <ul id="${index}_game_id" class="nav nav-pills panel panel-default">
+                {@each game_list as item, gkey}
+                <li role="presentation" flag="${index}_bar_item" t_id="${item.id}" class="{@if gkey == 0}active{@/if}"><a href="#">${item.name}</a></li>
+                {@/each}
+            </ul>
+            <button id="${index}_sub" class="btn btn-default" data-loading-text="处理中.." type="button">
+                添加
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="height: 8px;">&nbsp;</div>
+<div class="container-fluid no_space">
+    <div class="panel panel-default">
+        <div class="panel-heading">可出游戏列表</div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <thead><tr>
+                    <td>终端id</td><td>游戏id</td>
+                    <td>佣金比例</td>
+                    <td>创建时间</td><td>操作</td>
+                </tr></thead>
+                <tbody>
+                {@each terminal_game_list as set}
+                <tr>
+                    <td>${set.terminal_id}</td>
+                    <td>${set.game_id|get_game_name}</td>
+                    <td>${set.scale/1000}</td>
+                    <td>${set.create_time|getLocDateStr}</td>
+                    <td>
+                        <a t_id="${set.id}" flag="${index}_set_scale">设置佣金比例</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a t_id="${set.id}" flag="${index}_delete">删除</a>
+                    </td>
+                </tr>
+                {@/each}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

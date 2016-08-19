@@ -1,0 +1,9 @@
+[package]
+name = "cons"
+version = "0.0.1"
+authors = ["bosilan"]
+
+[dependencies]
+rustc-serialize = "0.3.16"
+easy_util = {git = "https://limitee:20131988lm@github.com/limitee/easy_util.git"}
+lazy_static = { git = "https://github.com/rust-lang-nursery/lazy-static.rs.git" }

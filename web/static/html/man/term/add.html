@@ -1,0 +1,88 @@
+<div class="container-fluid no_space">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td width="80px">所属游戏</td>
+                        <td>
+                            <ul id="${index}_game_id" class="nav nav-pills panel panel-default">
+                                {@each game_list as item, gkey}
+                                <li role="presentation" flag="${index}_bar_item" t_id="${item.id}" class="{@if gkey == 0}active{@/if}"><a href="#">${item.name}</a></li>
+                                {@/each}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>期次号</td>
+                        <td>
+                            <input id="${index}_code" class="form-control" type="text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>开售时间</td>
+                        <td>
+                            <input id="${index}_sale_time" class="form-control" type="text" value="${sale_time}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>停售时间</td>
+                        <td>
+                            <input id="${index}_end_time" class="form-control" type="text" value="${end_time}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>主队</td>
+                        <td>
+                            <input id="${index}_master" class="form-control" type="text" value=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>客队</td>
+                        <td>
+                            <input id="${index}_guest" class="form-control" type="text" value=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>让球数</td>
+                        <td>
+                            <input id="${index}_give" class="form-control" type="text" value="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80px">可售玩法</td>
+                        <td>
+                            <ul class="nav nav-pills panel panel-default">
+                                {@each play_type_list as item, gkey}
+                                <li role="presentation" flag="${index}_pt_item" t_id="${item.id}" {@if play_map[item.id]}class="active"{@/if}>
+                                <a href="#">${item.name}</a>
+                                </li>
+                                {@/each}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80px">单关玩法</td>
+                        <td>
+                            <ul class="nav nav-pills panel panel-default">
+                                {@each play_type_list as item, gkey}
+                                <li role="presentation" flag="${index}_dc_item" t_id="${item.id}" {@if dc_play_map[item.id]}class="active"{@/if}>
+                                <a href="#">${item.name}</a>
+                                </li>
+                                {@/each}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="${index}_sub" class="btn btn-default" data-loading-text="处理中.." type="button">
+                                创建
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

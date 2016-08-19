@@ -1,0 +1,18 @@
+{
+  "target": "dev",
+  "db": {
+    "dsn":"postgresql://postgres:1988lm@localhost/mcp",
+    "conn_limit": 25
+  },
+  "hyper": {
+    "port": 4000,
+    "thread_count": 100
+  },
+  "redis": {
+    "dsn":"redis://127.0.0.1:7965/",
+    "conn_limit": 25
+  },
+  "server": {
+    "url": "0.0.0.0:8888"
+  }
+}

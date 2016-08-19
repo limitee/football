@@ -1,0 +1,61 @@
+<div class="container-fluid no_space">
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td width="80px">出票间隔</td>
+                        <td>
+                            <input id="${index}_print_gap" class="form-control" type="text" value="${ext.print_gap}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80px">保证额度</td>
+                        <td>
+                            <input id="${index}_guarantee_amount" class="form-control" type="text" value="${ext.guarantee_amount/100}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80px">代兑</td>
+                        <td>
+                            <input id="${index}_help_bonus_id" class="form-control" type="text" value="${ext.help_bonus_id}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80px">模式</td>
+                        <td>
+                            <ul id="${index}_mode" class="nav nav-pills">
+                            {@each terminal_mode as item, gkey}
+                                <li role="presentation" flag="${index}_mode_item" t_id="${item.id}" {@if item.id == ext.mode}class="active"{@/if}><a href="#">${item.desc}</a></li>
+                            {@/each}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80px">中心</td>
+                        <td>
+                        <ul id="${index}_group_id" class="nav nav-pills panel panel-default">
+                            <li role="presentation" flag="${index}_bar_item" t_id="-1"><a href="#">无</a></li>
+                            {@each group_list as item, gkey}
+                            <li role="presentation" flag="${index}_bar_item" t_id="${item.id}" 
+                                {@if set.group_id==item.id}class="active"{@/if}
+                            >
+                            <a href="#">${item.nickname}</a>
+                            </li>
+                            {@/each}
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="${index}_sub" class="btn btn-default" data-loading-text="处理中.." type="button">
+                                提交
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

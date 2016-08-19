@@ -1,0 +1,36 @@
+<div class="container-fluid no_space">
+<div class="row">
+<div class="col-md-12">
+    <form class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-md-1" for="${index}_title">
+        标题
+        </label> 
+        <div class="col-md-11">
+            <input id="${index}_title" class="form-control" type="text" value="${set.title}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div id="${index}_preview" class="col-md-offset-1 col-md-11">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-1" for="${index}_text_input">
+        内容
+        </label>
+        <div class="col-md-11">
+            <textarea id="${index}_text_input" style="width: 100%;height:300px;">${set.content}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-11">
+            <button id="${index}_sub" class="btn btn-default" data-loading-text="处理中.." type="button">
+            创建
+            </button>
+        </div>
+    </div>
+    </form>
+</div>
+</div>    
+</div>
+

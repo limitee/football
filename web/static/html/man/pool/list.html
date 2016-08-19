@@ -1,0 +1,76 @@
+<div class="container-fluid no_space" style="padding-bottom: 8px;">
+    <div class="row">
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                游戏:
+            </span>
+            <select id="${index}_game_id" class="form-control">
+                <option value="-1">所有</option>
+                {@each game_rel as set}
+                <option value="${set.id}" {@if cond.game_id == set.id}selected="true"{@/if}>${set.name}</option>
+                {@/each}
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                内部ID
+            </span>
+            <input id="${index}_id" value="${cond.id}" type="text" class="form-control"/>
+        </div>
+    </div>
+    </div>
+
+</div>
+<div class="container-fluid no_space">
+    <div row="col-md-12" style="padding-bottom: 8px">
+        <button id="${index}_search" class="btn btn-default">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            搜索
+        </button>
+    </div>
+</div>
+<div id="${index}_set_list" class="container-fluid no_space">
+    <table class="table table-striped table-hover table-bordered">
+        <thead><tr>
+            <td>id</td><td>游戏</td>
+            <td>玩法</td><td>投注方式</td>
+            <td>金额</td><td>号码</td><td>状态</td>
+            <td>
+                截止时间<br/>
+                {@if cond.status==1}
+                发送时间<br/>
+                {@/if}
+            </td><td>操作</td>
+        </tr></thead>
+        <tbody>
+        {@each set_list as set}
+        <tr>
+            <td>${set.id}</td>
+            <td>${set.game_id|get_game_name}</td>
+            <td>${set|get_play_name}</td>
+            <td>${set|get_bet_name}</td>
+            <td>${set.amount/100}</td>
+            <td><div style="width: 140px;word-break: break-all">${set.number}</div></td>
+            <td>${set.status|get_ticket_status_des}</td>
+            <td>
+                ${set.end_time|getLocDateStr}<br/>
+                {@if set.status==1}
+                ${set.send_time|getLocDateStr}<br/>
+                {@/if}
+            </td>
+            <td>
+                {@if set.status==1}
+                <a flag="${index}_resend" t_id="${set.id}" version="${set.version}">重新发送</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                {@/if}
+            </td>
+        </tr>
+        {@/each}
+        </tbody>
+    </table>
+</div>
+<div id="${index}_pagebar" class="container-fluid no_space">
+</div>

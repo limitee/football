@@ -1,0 +1,35 @@
+<div class="container-fluid no_space">
+    <div class="form-group">
+        <label class="control-label col-md-1" for="${index}_body">
+            body:
+        </label>
+        <div class="col-md-11">
+            <textarea id="${index}_body" style="width: 100%;height:200px;">${msg.body_str}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-1" for="${index}_body">
+            cmd:
+        </label>
+        <div class="col-md-11">
+            <ul id="${index}_cmd" class="nav nav-pills panel panel-default">
+                {@each cmd_list as item, skey}
+                <li role="presentation" flag="${index}_bar_item" t_id="${item.id}" class="{@if skey == 0}active{@/if}"><a href="#">${item.name}</a></li>
+                {@/each}
+            </ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-11">
+            <button id="${index}_sbt" class="btn btn-default">发送</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-1" for="${index}_body">
+            返回body:
+        </label>
+        <div id="${index}_back_body" class="col-md-11" style="word-break: break-all">
+            ${msg.back_body}
+        </div>
+    </div>
+</div>

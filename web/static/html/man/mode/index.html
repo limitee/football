@@ -1,0 +1,47 @@
+<div class="container-fluid no_space">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td width="80px">系统模式</td>
+                    <td>
+                        <ul id="${index}_mode" class="nav nav-pills panel panel-default">
+                            {@each mode_list as item, gkey}
+                            <li role="presentation" flag="${index}_bar_item" t_id="${item.id}" class="{@if gkey == cur_mode}active{@/if}"><a href="#">${item.desc}</a></li>
+                            {@/each}
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="80px">错票转发</td>
+                    <td>
+                        <ul id="${index}_resend" class="nav nav-pills panel panel-default">
+                            <li role="presentation" flag="${index}_resend_item" t_id="1"{@if resend == 1} class="active"{@/if}><a href="#">是</a></li>
+                            <li role="presentation" flag="${index}_resend_item" t_id="0"{@if resend == 0} class="active"{@/if}><a href="#">否</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button id="${index}_sub" class="btn btn-default" data-loading-text="处理中.." type="button">
+                            保存
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="rows">
+        <div class="panel panel-default">
+            <div class="panel-heading">常用操作</div>
+            <div class="panel-body">
+                <button id="${index}_jcc_term" type="button" class="btn btn-default">刷新竞彩游戏期次</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="${index}_jcl_term" type="button" class="btn btn-default">刷新篮球游戏期次</button>
+            </div>
+        </div>
+    </div>
+</div>

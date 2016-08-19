@@ -1,0 +1,79 @@
+<div class="container-fluid no_space" style="padding-bottom: 8px;">
+    <div class="row">
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                开始日期 
+            </span>
+            <input id="${index}_start_date" value="${add.start_date}" type="text" class="form-control"/>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                结束日期 
+            </span>
+            <input id="${index}_end_date" value="${add.end_date}" type="text" class="form-control"/>
+        </div>
+    </div>
+</div>
+<div class="container-fluid no_space">
+    <div row="col-md-12" style="padding-bottom:8px;padding-top:8px;">
+        <button id="${index}_search" class="btn btn-default">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            查询 
+        </button>
+    </div>
+</div>
+<div class="container-fluid no_space">
+    <table class="table table-striped table-hover table-bordered">
+        <thead><tr>
+            <td>用户</td><td>日期</td>
+            <td>
+                出票数<br/>
+                出票数(终端)
+            </td>
+            <td>销售额<br/>
+                销售额(终端) 
+            </td>
+            <td>
+                兑奖数<br/>
+                异常兑奖数<br/>
+                兑奖数(终端)
+            </td>
+            <td>
+                兑奖额<br/>
+                异常兑奖额<br/>
+                兑奖额(终端) 
+            </td>
+            <td>操作</td>
+        </tr></thead>
+        <tbody>
+        {@each sets as set}
+        <tr>
+            <td>${set.username}</td>
+            <td>${set.sale_date}</td>
+            <td>
+                ${set.sale_count}<br/>
+                ${set.term_sale_count}
+            </td>
+            <td>
+                ${set.sale_amount/100}<br/>
+                ${set.term_sale_amount/100}
+            </td>
+            <td>
+                ${set.bonus_count}<br/>
+                ${set.bonus_err_count}<br/>
+                ${set.term_bonus_count}
+            </td>
+            <td>
+                ${set.bonus_amount/100}<br/>
+                ${set.bonus_err_amount/100}<br/>
+                ${set.term_bonus_amount/100}
+            </td>
+            <td></td>
+        </tr>
+        {@/each}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,39 @@
+<div class="container-fluid no_space">
+
+    <div class="row" style="padding-top:8px;">
+    <div class="col-md-12">
+        <div class="input-group">
+            <span class="input-group-addon">
+                游戏 
+            </span>
+            <ul id="${index}_game_id" class="nav nav-pills">
+                {@each game_list as item, gkey}
+                <li role="presentation" flag="${index}_bar_item" t_id="${item.id}">
+                <a href="#">${item.name}</a>
+                </li>
+                {@/each}
+            </ul>
+        </div>
+    </div>
+    </div>
+
+    <div class="row" style="padding-top:8px;">
+    <div class="col-md-6">
+        <div class="input-group">
+            <span class="input-group-addon">
+                期次 
+            </span>
+            <input id="${index}_term_code" value="" type="text" class="form-control"/>
+        </div>
+    </div>
+    </div>
+
+    <div class="row" style="padding-top:8px;">
+    <div class="col-md-12">
+         <button id="${index}_sub" class="btn btn-default" data-loading-text="处理中.." type="button">
+         提交
+         </button>
+    </div>
+    </div>
+
+</div>

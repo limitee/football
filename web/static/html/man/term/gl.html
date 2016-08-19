@@ -1,0 +1,76 @@
+<div class="container-fluid no_space" style="padding-bottom: 8px;">
+    <div class="row" style="padding-top:8px">
+    <div class="col-md-12">
+        <div class="input-group">
+            <span class="input-group-addon">
+                体彩官网开奖url:
+            </span>
+            <input id="${index}_url" value="" type="text" class="form-control"/>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="container-fluid no_space">
+    <div row="col-md-12" style="padding-bottom: 8px">
+        <button id="${index}_get_info" data-loading-text="处理中.." class="btn btn-default">
+            获取 
+        </button>
+    </div>
+</div>
+<div class="container-fluid no_space">
+    <div class="panel panel-default">
+        <div class="panel-heading">奖级模版</div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <thead><tr><td>序号</td><td>奖级</td><td>税前金额</td><td>税后金额</td></tr></thead>
+                {@each gl_list as set}
+                <tr>
+                    <td>${set.lev}</td>
+                    <td>${set.descrip}</td>
+                    <td><input id="${index}_lev_bonus_${set.lev}" type="text" value="${bonus_map[set.lev]/100}"/></td>
+                    <td><input id="${index}_lev_tax_${set.lev}" type="text" value="${tax_map[set.lev]/100}"/></td>
+                </tr>
+                {@/each}
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="height: 8px;">&nbsp;</div>
+<div class="container-fluid no_space">
+    <div class="row">
+        <div class="col-md-12">
+            <button id="${index}_sub" class="btn btn-default" data-loading-text="处理中.." type="button">
+                保存
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="height: 8px;">&nbsp;</div>
+<div class="container-fluid no_space">
+    <div class="panel panel-default">
+        <div class="panel-heading">当前值</div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <thead><tr><td>序号</td><td>奖级</td><td>税前金额</td><td>税后金额</td></tr></thead>
+                {@each db_list as set}
+                <tr>
+                    <td>${set.lev}</td>
+                    <td>${set.descrip}</td>
+                    <td>${set.bonus/100}</td>
+                    <td>${set.bonus_after_tax/100}</td>
+                </tr>
+                {@/each}
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="height: 8px;">&nbsp;</div>
+<div class="container-fluid no_space">
+    <div class="row">
+        <div class="col-md-12">
+            <button id="${index}_next" class="btn btn-default" data-loading-text="处理中.." type="button">
+                下一步
+            </button>
+        </div>
+    </div>
+</div>

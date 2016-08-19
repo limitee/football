@@ -1,0 +1,102 @@
+<div class="container-fluid no_space">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td width="80px">期号</td>
+                        <td>
+                            <input id="${index}_code" class="form-control" type="text" value="${set.code}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80px">开售时间</td>
+                        <td>
+                            <input id="${index}_sale_time" class="form-control" type="text" value="${set.sale_time|getLocDateStr}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80px">停售时间</td>
+                        <td>
+                            <input id="${index}_end_time" class="form-control" type="text" value="${set.end_time|getLocDateStr}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>让球数</td>
+                        <td>
+                            <input id="${index}_give" class="form-control" type="text" value="${set.give/10}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80px">可售玩法</td>
+                        <td>
+                            {@if set.game_id==201}
+                            <ul class="nav nav-pills panel panel-default">
+                                {@each play_type_list as item, gkey}
+                                <li role="presentation" flag="${index}_bar_item" t_id="${item.id}" {@if play_map[item.id]}class="active"{@/if}>
+                                    <a href="#">${item.name}</a>
+                                </li>
+                                {@/each}
+                            </ul>
+                            {@/if}
+
+                            {@if set.game_id==301}
+                            <ul class="nav nav-pills panel panel-default">
+                                {@each jcl_play_type_list as item, gkey}
+                                <li role="presentation" flag="${index}_bar_item" t_id="${item.id}" {@if play_map[item.id]}class="active"{@/if}>
+                                    <a href="#">${item.name}</a>
+                                </li>
+                                {@/each}
+                            </ul>
+                            {@/if}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80px">单关玩法</td>
+                        <td>
+                            {@if set.game_id==301}
+                            <ul class="nav nav-pills panel panel-default">
+                                {@each jcl_play_type_list as item, gkey}
+                                <li role="presentation" flag="${index}_dc_item" t_id="${item.id}" {@if dc_play_map[item.id]}class="active"{@/if}>
+                                <a href="#">${item.name}</a>
+                                </li>
+                                {@/each}
+                            </ul>
+                            {@/if}
+
+                            {@if set.game_id==201}
+                            <ul class="nav nav-pills panel panel-default">
+                                {@each play_type_list as item, gkey}
+                                <li role="presentation" flag="${index}_dc_item" t_id="${item.id}" {@if dc_play_map[item.id]}class="active"{@/if}>
+                                <a href="#">${item.name}</a>
+                                </li>
+                                {@/each}
+                            </ul>
+                            {@/if}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80px">状态</td>
+                        <td>
+                            <ul class="nav nav-pills panel panel-default">
+                                {@each status_list as item, gkey}
+                                <li role="presentation" flag="${index}_status_item" t_id="${item.id}" {@if item.id==set.status}class="active"{@/if}>
+                                <a href="#">${item.desc}</a>
+                                </li>
+                                {@/each}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="${index}_sub" class="btn btn-default" data-loading-text="处理中.." type="button">
+                                提交
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container-fluid no_space">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="panel-group" id="${index}_accordion" role="tablist" aria-multiselectable="true">
+                {@each groups as group, gkey}
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab">
+                        <h4 class="panel-title" style="text-align:center">
+                            <a data-toggle="collapse" data-parent="#${index}_accordion" href="#collapse_${gkey}" aria-expanded="{@if gkey == 0}true{@else}false{@/if}" aria-controls="collapse_${gkey}">
+                                ${group.name}
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="panel-collapse collapse{@if gkey == 0} in{@else}{@/if}" id="collapse_${gkey}" role="tabpanel">
+                        <div class="panel-body" style="text-align:center">
+                            <ul class="nav nav-pills nav-stacked">
+                                {@each group.items as item, ikey}
+                                <li role="presentation">
+                                    <a href="#" flag="${index}_url_item" t_url="${item.url}">
+                                        ${item.name}
+                                    </a>
+                                </li>
+                                {@/each}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {@/each}
+            </div>
+        </div>
+        <div id="${index}_main" class="col-md-10">
+        </div>
+    </div>
+</div>

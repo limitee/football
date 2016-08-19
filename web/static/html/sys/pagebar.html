@@ -1,0 +1,37 @@
+<div class="container-fluid no_space">
+    <nav>
+        <ul class="pagination">
+            {@if cur == 1}
+            <li class="disable">
+            {@else}
+            <li class="">
+            {@/if}
+                <a pIndex="${pIndex}" aria-label="Previous">
+                <span aria-hidden="true">
+                &laquo;
+                </span>
+                </a>
+            </li>
+            {@each sets as value, sKey}
+                {@if value < 0}
+                <li class="disable"><a pIndex="${value}">...</a></li>
+                {@else if value == cur}
+                <li class="active"><a pIndex="${value}">${value}</a></li>
+                {@else}
+                <li><a pIndex="${value}">${value}</a></li>
+                {@/if}
+            {@/each}
+            {@if cur == page_count}
+            <li class="disable">
+            {@else}
+            <li class="">
+            {@/if}
+                <a pIndex="${nIndex}" aria-label="Next">
+                <span aria-hidden="true">
+                &raquo;
+                </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

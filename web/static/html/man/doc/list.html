@@ -1,0 +1,20 @@
+<div id="${index}_set_list" class="container-fluid no_space">
+    <table class="table table-striped table-hover">
+        <thead><tr><td>id</td><td>标题</td><td>创建时间</td><td>操作</td></tr></thead>
+        <tbody>
+        {@each set_list as set}
+        <tr>
+            <td>${set.id}</td><td>${set.title}</td>
+            <td>${set.create_time|getLocDateStr}</td>
+            <td>
+                <a target="_blank" href="./man_doc_viewbyid.html?id=${set.id}">打开</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a flag="${index}_edit" t_id="${set.id}">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a file_id="${set.id}" flag="${index}_delete">删除</a>
+            </td>
+        </tr>
+        {@/each}
+        </tbody>
+    </table>
+</div>
+<div id="${index}_pagebar" class="container-fluid no_space">
+</div>

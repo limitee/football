@@ -1,0 +1,726 @@
+[root]
+name = "picker"
+version = "0.0.1"
+dependencies = [
+ "byteorder 0.5.3 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "chrono 0.2.22 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "cons 0.0.1",
+ "cron 0.0.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "cronjob 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/cronjob.git)",
+ "dc 0.0.1",
+ "easy_config 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_config.git)",
+ "easy_util 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_util.git)",
+ "easydb 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easydb.git)",
+ "elog 0.0.1",
+ "game 0.0.1",
+ "hyper 0.9.8 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "lazy_static 0.1.16 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "regex 0.1.71 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "service 0.0.1",
+ "sev_helper 0.0.1",
+ "time 0.1.35 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "util 0.0.1",
+]
+
+[[package]]
+name = "aho-corasick"
+version = "0.5.2"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "memchr 0.1.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "bitflags"
+version = "0.7.0"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "bufstream"
+version = "0.1.2"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "byteorder"
+version = "0.5.3"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "cfg-if"
+version = "0.1.0"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "chrono"
+version = "0.2.22"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "num 0.1.32 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "time 0.1.35 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "colored"
+version = "1.2.0"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "lazy_static 0.1.16 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "cons"
+version = "0.0.1"
+dependencies = [
+ "easy_util 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_util.git)",
+ "lazy_static 0.2.0 (git+https://github.com/rust-lang-nursery/lazy-static.rs.git)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "cookie"
+version = "0.2.5"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "openssl 0.7.13 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "time 0.1.35 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "url 1.1.1 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "cron"
+version = "0.0.2"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "chrono 0.2.22 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "regex 0.1.71 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "cronjob"
+version = "0.0.1"
+source = "git+https://limitee:20131988lm@github.com/limitee/cronjob.git#f1425c7dd9d9b79355a7b28ab56376353102eb11"
+dependencies = [
+ "chrono 0.2.22 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "dc"
+version = "0.0.1"
+dependencies = [
+ "chrono 0.2.22 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "cons 0.0.1",
+ "easy_config 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_config.git)",
+ "easy_util 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_util.git)",
+ "easydb 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easydb.git)",
+ "elog 0.0.1",
+ "lazy_static 0.2.0 (git+https://github.com/rust-lang-nursery/lazy-static.rs.git)",
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "postgres 0.11.8 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rand 0.3.14 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "redis 0.5.2 (git+https://github.com/mitsuhiko/redis-rs.git)",
+ "regex 0.1.71 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "time 0.1.35 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "easy_config"
+version = "0.0.1"
+source = "git+https://limitee:20131988lm@github.com/limitee/easy_config.git#882e04f9397a9d35dcc523e622cf1cf0c326f17b"
+dependencies = [
+ "easy_util 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_util.git)",
+ "lazy_static 0.1.16 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "easy_util"
+version = "0.0.1"
+source = "git+https://limitee:20131988lm@github.com/limitee/easy_util.git#06f6195a46bfd295978d7f995f58721da31a0f24"
+dependencies = [
+ "rand 0.3.14 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "easydb"
+version = "0.0.1"
+source = "git+https://limitee:20131988lm@github.com/limitee/easydb.git#f2b111ffae8ea8aa791e68ae03d8c15867b90a86"
+dependencies = [
+ "easy_util 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_util.git)",
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "postgres 0.11.8 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rand 0.3.14 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "regex 0.1.71 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "elog"
+version = "0.0.1"
+dependencies = [
+ "chrono 0.2.22 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "colored 1.2.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "easy_config 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_config.git)",
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "game"
+version = "0.0.1"
+dependencies = [
+ "cons 0.0.1",
+ "dc 0.0.1",
+ "easy_config 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_config.git)",
+ "easy_util 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_util.git)",
+ "easydb 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easydb.git)",
+ "elog 0.0.1",
+ "lazy_static 0.1.16 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "regex 0.1.71 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "time 0.1.35 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "util 0.0.1",
+]
+
+[[package]]
+name = "gcc"
+version = "0.3.28"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "gdi32-sys"
+version = "0.2.0"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "winapi 0.2.7 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "winapi-build 0.1.1 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "hex"
+version = "0.2.0"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "hpack"
+version = "0.2.0"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "httparse"
+version = "1.1.2"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "hyper"
+version = "0.9.8"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "cookie 0.2.5 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "httparse 1.1.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "language-tags 0.2.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "mime 0.2.1 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "num_cpus 0.2.13 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "openssl 0.7.13 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "openssl-verify 0.1.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "solicit 0.4.4 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "time 0.1.35 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "traitobject 0.0.1 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "typeable 0.1.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "unicase 1.4.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "url 1.1.1 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "idna"
+version = "0.1.0"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "matches 0.1.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "unicode-bidi 0.2.3 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "unicode-normalization 0.1.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "kernel32-sys"
+version = "0.2.2"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "winapi 0.2.7 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "winapi-build 0.1.1 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "language-tags"
+version = "0.2.2"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "lazy_static"
+version = "0.1.16"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "lazy_static"
+version = "0.2.0"
+source = "git+https://github.com/rust-lang-nursery/lazy-static.rs.git#20037705ae9b6ea40889adfd266dd38d0db90466"
+
+[[package]]
+name = "lazy_static"
+version = "0.2.1"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "libc"
+version = "0.2.11"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "libressl-pnacl-sys"
+version = "2.1.6"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "pnacl-build-helper 1.4.10 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "log"
+version = "0.3.6"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "matches"
+version = "0.1.2"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "memchr"
+version = "0.1.11"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "libc 0.2.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "mime"
+version = "0.2.1"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "net2"
+version = "0.2.23"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "cfg-if 0.1.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "kernel32-sys 0.2.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "libc 0.2.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "winapi 0.2.7 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "ws2_32-sys 0.2.1 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "num"
+version = "0.1.32"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "num-integer 0.1.32 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "num-iter 0.1.32 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "num-traits 0.1.32 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "num-integer"
+version = "0.1.32"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "num-traits 0.1.32 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "num-iter"
+version = "0.1.32"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "num-integer 0.1.32 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "num-traits 0.1.32 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "num-traits"
+version = "0.1.32"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "num_cpus"
+version = "0.2.13"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "libc 0.2.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "openssl"
+version = "0.7.13"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "bitflags 0.7.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "gcc 0.3.28 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "lazy_static 0.2.1 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "libc 0.2.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "openssl-sys 0.7.13 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "openssl-sys-extras 0.7.13 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "openssl-sys"
+version = "0.7.13"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "gdi32-sys 0.2.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "libc 0.2.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "libressl-pnacl-sys 2.1.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "pkg-config 0.3.8 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "user32-sys 0.2.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "openssl-sys-extras"
+version = "0.7.13"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "gcc 0.3.28 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "libc 0.2.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "openssl-sys 0.7.13 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "openssl-verify"
+version = "0.1.0"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "openssl 0.7.13 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "phf"
+version = "0.7.14"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "phf_shared 0.7.14 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "phf_shared"
+version = "0.7.14"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "pkg-config"
+version = "0.3.8"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "pnacl-build-helper"
+version = "1.4.10"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "tempdir 0.3.4 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "postgres"
+version = "0.11.8"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "bufstream 0.1.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "byteorder 0.5.3 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "hex 0.2.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "net2 0.2.23 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "phf 0.7.14 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "rand"
+version = "0.3.14"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "libc 0.2.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "redis"
+version = "0.5.2"
+source = "git+https://github.com/mitsuhiko/redis-rs.git#3c960e0a9ff4241ac41595a67379d8ed91fa7a9f"
+dependencies = [
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "sha1 0.1.1 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "url 0.5.9 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "regex"
+version = "0.1.71"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "aho-corasick 0.5.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "memchr 0.1.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "regex-syntax 0.3.3 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "thread_local 0.2.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "utf8-ranges 0.1.3 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "regex-syntax"
+version = "0.3.3"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "rust-crypto"
+version = "0.2.36"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "gcc 0.3.28 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "libc 0.2.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rand 0.3.14 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "time 0.1.35 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "rustc-serialize"
+version = "0.3.19"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "rustc_version"
+version = "0.1.7"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "semver 0.1.20 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "semver"
+version = "0.1.20"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "service"
+version = "0.0.1"
+dependencies = [
+ "chrono 0.2.22 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "cons 0.0.1",
+ "dc 0.0.1",
+ "easy_util 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_util.git)",
+ "easydb 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easydb.git)",
+ "elog 0.0.1",
+ "game 0.0.1",
+ "hyper 0.9.8 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "lazy_static 0.2.0 (git+https://github.com/rust-lang-nursery/lazy-static.rs.git)",
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "regex 0.1.71 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rust-crypto 0.2.36 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "sev_helper 0.0.1",
+ "time 0.1.35 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "util 0.0.1",
+ "xml-rs 0.3.4 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "sev_helper"
+version = "0.0.1"
+dependencies = [
+ "chrono 0.2.22 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "cons 0.0.1",
+ "dc 0.0.1",
+ "easy_util 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easy_util.git)",
+ "easydb 0.0.1 (git+https://limitee:20131988lm@github.com/limitee/easydb.git)",
+ "elog 0.0.1",
+ "game 0.0.1",
+ "lazy_static 0.2.0 (git+https://github.com/rust-lang-nursery/lazy-static.rs.git)",
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "redis 0.5.2 (git+https://github.com/mitsuhiko/redis-rs.git)",
+ "regex 0.1.71 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "time 0.1.35 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "util 0.0.1",
+]
+
+[[package]]
+name = "sha1"
+version = "0.1.1"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "byteorder 0.5.3 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "solicit"
+version = "0.4.4"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "hpack 0.2.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "log 0.3.6 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "tempdir"
+version = "0.3.4"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "rand 0.3.14 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "thread-id"
+version = "2.0.0"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "kernel32-sys 0.2.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "libc 0.2.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "thread_local"
+version = "0.2.6"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "thread-id 2.0.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "time"
+version = "0.1.35"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "kernel32-sys 0.2.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "libc 0.2.11 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "winapi 0.2.7 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "traitobject"
+version = "0.0.1"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "typeable"
+version = "0.1.2"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "unicase"
+version = "1.4.0"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "rustc_version 0.1.7 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "unicode-bidi"
+version = "0.2.3"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "matches 0.1.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "unicode-normalization"
+version = "0.1.2"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "url"
+version = "0.5.9"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "matches 0.1.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "unicode-bidi 0.2.3 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "unicode-normalization 0.1.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "uuid 0.2.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "url"
+version = "1.1.1"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "idna 0.1.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "matches 0.1.2 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "user32-sys"
+version = "0.2.0"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "winapi 0.2.7 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "winapi-build 0.1.1 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "utf8-ranges"
+version = "0.1.3"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "util"
+version = "0.0.1"
+dependencies = [
+ "rust-crypto 0.2.36 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "rustc-serialize 0.3.19 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "time 0.1.35 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "uuid"
+version = "0.2.2"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "rand 0.3.14 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "winapi"
+version = "0.2.7"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "winapi-build"
+version = "0.1.1"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+
+[[package]]
+name = "ws2_32-sys"
+version = "0.2.1"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "winapi 0.2.7 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+ "winapi-build 0.1.1 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+
+[[package]]
+name = "xml-rs"
+version = "0.3.4"
+source = "registry+git://crates.mirrors.ustc.edu.cn/index"
+dependencies = [
+ "bitflags 0.7.0 (registry+git://crates.mirrors.ustc.edu.cn/index)",
+]
+

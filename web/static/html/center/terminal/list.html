@@ -1,0 +1,74 @@
+<div class="modal fade bs-example-modal-lg" id="${index}_myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:80%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+                <h4 class="modal-title">
+                    查看终端密钥
+                </h4>
+            </div>
+            <div class="modal-body"  id="${index}_myModalBody" style="height:480px;overflow-y: scroll">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="${index}_set_list" class="container-fluid no_space">
+    <div class="row"><div class="col-md-12">
+        上次刷新时间:<span class="text-info">${time}</span>
+    </div>
+    </div>
+    <div class="row">
+    {@each set_list as set,sindex}
+    <div class="col-md-4">
+        <div class="panel {@if set.ext.status==0}panel-danger{@else}panel-info{@/if}">
+            <div class="panel-heading">
+                ${set.id},${set.username},{@if set.ext.status==0}离线{@else}在线{@/if}
+                {@if set.account.balance < 500000},注意余额{@/if}
+            </div>
+            <div class="panel-body no_space">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div style="padding: 20px;">
+                            <img width="120px" height="120px" src="./img/terminal.jpg"/>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        类型:<br/>
+                        <span class="text-info">{@if set.ext.type==0}出票机{@else}管理机{@/if}</span><br/>
+                        当前余额:<br/>
+                        <span class="text-info">${set.account.balance/100}元</span><br/>
+                        终端余额:<br/>
+                        <span class="text-info">${set.account.client_balance/100}元</span><br/>
+                    </div>
+                </div>
+                <div style="text-align: right;">
+                    快照S/C:&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-info">${set.ext.server_balance/100}元</span>/
+                    <span class="text-info">${set.ext.client_balance/100}元</span>
+                </div>
+                <div style="height: 8px">&nbsp;&nbsp;</div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button flag="${index}_game" t_id="${set.id}" type="button" class="btn btn-default">游戏管理</button>
+                    <button flag="${index}_account" t_id="${set.id}" type="button" class="btn btn-default">账户流水</button>
+                    <button flag="${index}_charge" t_id="${set.id}" type="button" class="btn btn-default">刷新缴款</button>
+                    <button flag="${index}_charge_report" t_id="${set.id}" type="button" class="btn btn-default">缴款</button>
+                    <!--
+                    <button flag="${index}_test" type="button" class="btn btn-default">测试</button>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+        {@if sindex%3==2}</div><div class="row">{@/if}
+    {@/each}
+    </div>
+    </div>
+</div>
