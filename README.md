@@ -213,3 +213,7 @@ update ticket set bonus=0,bonus_after_tax=0,bonus_detail='[]' where status=40;
 update customer set province=1 where username like 'hb%';
 update customer set province=2 where username like 'he%';
 update customer set province=3 where username like 'sx%';
+=======
+
+# football
+football analyse
